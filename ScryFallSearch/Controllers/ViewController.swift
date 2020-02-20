@@ -15,10 +15,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.tableView.isHidden = false
+                self.greetingsLabel.isHidden = true
             }
         }
     }
     
+    @IBOutlet weak var greetingsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView! {
         didSet{
             tableView.delegate = self
@@ -75,7 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell") as? CardCell{
             cell.nameLabel.text = cards?.data[indexPath.row].name
             cell.typeLabel.text = cards?.data[indexPath.row].typeLine
-            cell.oracleIDLabel.text = cards?.data[indexPath.row].oracleID
+            cell.oracleIDLabel.text = "Oracle ID: \(cards?.data[indexPath.row].oracleID ?? "unknown")"
             
             if let imageUrl = cards?.data[indexPath.row].imageUris?.small{
 //                let url = URL(string: imageUrl)

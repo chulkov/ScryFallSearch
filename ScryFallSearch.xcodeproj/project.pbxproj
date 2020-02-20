@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -132,7 +132,6 @@
 				032A249A2D92C7BCCC040C3A /* Pods-ScryFallSearch.debug.xcconfig */,
 				E14148DC12B2C827923F1771 /* Pods-ScryFallSearch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

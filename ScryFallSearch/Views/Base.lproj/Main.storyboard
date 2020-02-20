@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F3m-Qv-Kac">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,35 +12,46 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScryFallSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="r3E-p5-8A8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Enter card name" translatesAutoresizingMaskIntoConstraints="NO" id="r3E-p5-8A8">
+                                <rect key="frame" x="0.0" y="44" width="320" height="56"/>
                                 <color key="backgroundColor" red="0.12170183950000001" green="0.12170183950000001" blue="0.12170183950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="I8Y-2J-oSg"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Os-dq-ASb">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Os-dq-ASb">
+                                <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                 <color key="backgroundColor" red="0.17775952819999999" green="0.1771511734" blue="0.1568579376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fjj-dT-bBF" customClass="CardCell" customModule="ScryFallSearch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fjj-dT-bBF" id="YOi-gC-bbn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to ScryFall Card Search. Just type in card name to begin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odw-1z-Fti">
+                                <rect key="frame" x="10" y="243" width="300" height="82.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="OJv-XY-fcf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.17775952816009521" green="0.17715117335319519" blue="0.1568579375743866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Os-dq-ASb" secondAttribute="bottom" id="2rc-um-IHk"/>
+                            <constraint firstItem="odw-1z-Fti" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3XV-E8-N6L"/>
+                            <constraint firstItem="odw-1z-Fti" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="925-mI-iYn"/>
                             <constraint firstItem="0Os-dq-ASb" firstAttribute="top" secondItem="r3E-p5-8A8" secondAttribute="bottom" id="IdP-UL-PIX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r3E-p5-8A8" secondAttribute="trailing" id="WVI-xk-Aj5"/>
                             <constraint firstItem="0Os-dq-ASb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d7X-HC-J3y"/>
@@ -52,6 +63,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ScryFall Search" id="TPr-Bl-1Mn"/>
                     <connections>
+                        <outlet property="greetingsLabel" destination="odw-1z-Fti" id="uX1-OA-hWl"/>
                         <outlet property="searchBar" destination="r3E-p5-8A8" id="xUe-UK-r2o"/>
                         <outlet property="tableView" destination="0Os-dq-ASb" id="VZe-TT-jas"/>
                     </connections>
@@ -66,7 +78,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F3m-Qv-Kac" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ORt-qk-G7g">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
