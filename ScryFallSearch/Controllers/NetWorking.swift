@@ -15,23 +15,15 @@ enum HandleError: Error{
 }
 
 struct NetworkRequest {
-    
     let baseURL = "https://api.scryfall.com/"
-    
-    init() {
-        
-    }
 
     func searchCards(text:String, compleation: @escaping(Result<Card, HandleError>) ->Void) {
         
         let destinationURL = baseURL + "cards/search?q=\(text)"
         let urlString = destinationURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         guard let resourceURL = URL(string: urlString!) else {fatalError()}
-
-        print("\(resourceURL)")
-
+        
         let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
-            
             guard let jsonData = data else {
                 compleation(.failure(.noDataAvailable))
                 return
@@ -45,7 +37,6 @@ struct NetworkRequest {
                 print(error.localizedDescription)
                 compleation(.failure(.canNotProcessData))
             }
-            
         }
         dataTask.resume()
     }

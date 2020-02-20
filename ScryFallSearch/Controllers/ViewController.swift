@@ -45,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
-    // MARK: SearchBar Protocols
+    // MARK: SearchBar Delegates
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, !text.isEmpty{
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    // MARK: TableView Protocols
+    // MARK: TableView Delegates
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards?.data.count ?? 1
@@ -78,18 +78,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell") as? CardCell{
             cell.nameLabel.text = cards?.data[indexPath.row].name
             cell.typeLabel.text = cards?.data[indexPath.row].typeLine
-            cell.oracleIDLabel.text = "Oracle ID: \(cards?.data[indexPath.row].oracleID ?? "unknown")"
+            cell.oracleIDLabel.text = cards?.data[indexPath.row].oracleText
             
             if let imageUrl = cards?.data[indexPath.row].imageUris?.small{
-//                let url = URL(string: imageUrl)
-//
-//                DispatchQueue.global().async {
-//                    let data = try? Data(contentsOf: url!)
-//                    DispatchQueue.main.async {
-//                        cell.cardImage.image = UIImage(data: data!)
-//                    }
-//                }
-               
                 Nuke.loadImage(with: imageUrl , into: cell.cardImage)
             }
             if (indexPath.row % 2 == 0)

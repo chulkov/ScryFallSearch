@@ -30,12 +30,13 @@ struct Card: Codable {
 
 // MARK: - Datum
 struct Datum: Codable {
-    let id, oracleID, name, typeLine: String
+    let id, name, typeLine: String
+    let oracleText: String?
     let imageUris: ImageUris?
 
     enum CodingKeys: String, CodingKey {
         case  id, name
-        case oracleID = "oracle_id"
+        case oracleText = "oracle_text"
         case imageUris = "image_uris"
         case typeLine = "type_line"
     }
