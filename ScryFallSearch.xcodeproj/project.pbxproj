@@ -17,9 +17,11 @@
 		5032515623FE57BF0065A07F /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032515423FE57BF0065A07F /* CardCell.xib */; };
 		5032515A23FE58E70065A07F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032515923FE58E70065A07F /* Card.swift */; };
 		5032515C23FE5C460065A07F /* NetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032515B23FE5C460065A07F /* NetWorking.swift */; };
+		C264FDC109CDFADE2D212C89 /* Pods_ScryFallSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB171F78938F21860E64D5C4 /* Pods_ScryFallSearch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		032A249A2D92C7BCCC040C3A /* Pods-ScryFallSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScryFallSearch.debug.xcconfig"; path = "Target Support Files/Pods-ScryFallSearch/Pods-ScryFallSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		5032513323FE4EE50065A07F /* ScryFallSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScryFallSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5032513623FE4EE50065A07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5032513823FE4EE50065A07F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		5032515423FE57BF0065A07F /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		5032515923FE58E70065A07F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5032515B23FE5C460065A07F /* NetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorking.swift; sourceTree = "<group>"; };
+		CB171F78938F21860E64D5C4 /* Pods_ScryFallSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScryFallSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14148DC12B2C827923F1771 /* Pods-ScryFallSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScryFallSearch.release.xcconfig"; path = "Target Support Files/Pods-ScryFallSearch/Pods-ScryFallSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C264FDC109CDFADE2D212C89 /* Pods_ScryFallSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				5032513523FE4EE50065A07F /* ScryFallSearch */,
 				5032513423FE4EE50065A07F /* Products */,
+				5B581816308C169AEB497AD3 /* Pods */,
+				F0894AB5B135A38D40D3128A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +126,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5B581816308C169AEB497AD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				032A249A2D92C7BCCC040C3A /* Pods-ScryFallSearch.debug.xcconfig */,
+				E14148DC12B2C827923F1771 /* Pods-ScryFallSearch.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F0894AB5B135A38D40D3128A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB171F78938F21860E64D5C4 /* Pods_ScryFallSearch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5032514723FE4EE70065A07F /* Build configuration list for PBXNativeTarget "ScryFallSearch" */;
 			buildPhases = (
+				5613FD8FF6C7AB72254A9E4E /* [CP] Check Pods Manifest.lock */,
 				5032512F23FE4EE50065A07F /* Sources */,
 				5032513023FE4EE50065A07F /* Frameworks */,
 				5032513123FE4EE50065A07F /* Resources */,
+				BE9433400D690B63C3687C4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +212,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5613FD8FF6C7AB72254A9E4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScryFallSearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE9433400D690B63C3687C4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScryFallSearch/Pods-ScryFallSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScryFallSearch/Pods-ScryFallSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScryFallSearch/Pods-ScryFallSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5032512F23FE4EE50065A07F /* Sources */ = {
@@ -338,6 +407,7 @@
 		};
 		5032514823FE4EE70065A07F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 032A249A2D92C7BCCC040C3A /* Pods-ScryFallSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +426,7 @@
 		};
 		5032514923FE4EE70065A07F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E14148DC12B2C827923F1771 /* Pods-ScryFallSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
