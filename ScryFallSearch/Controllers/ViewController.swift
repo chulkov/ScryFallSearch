@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
-                self.greetingsLabel.isHidden = true
             }
         }
     }
@@ -36,11 +35,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             searchBar.delegate = self
         }
     }
+    let activityView = UIActivityIndicatorView(style: .whiteLarge)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         registerTableViewCells()
+        activityView.center = self.view.center
+        self.view.addSubview(activityView)
     }
     
     
@@ -49,7 +51,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, !text.isEmpty{
+            
+            self.greetingsLabel.isHidden = true
+            activityView.startAnimating()
+            
             NetworkRequest().searchCards(text: text) { result in
+                
+                DispatchQueue.main.async {
+                    self.activityView.stopAnimating()
+                }
+            
                 switch result {
                 case .failure(let error):
                     print(error)
